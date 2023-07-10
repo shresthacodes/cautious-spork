@@ -1,11 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class QuickSort {
+public class quicksort {
 
     static int arr[];
 
-    QuickSort(int n) {
+    quicksort(int n) {
         arr = new int[n];
     }
 
@@ -44,7 +44,7 @@ public class QuickSort {
         int choice = sc.nextInt();
         System.out.println("Enter length : ");
         int n = sc.nextInt();
-        QuickSort ob = new QuickSort(n);
+        quicksort ob = new quicksort(n);
         if (choice == 1) {
             for (int i = 0; i < n; i++)
                 arr[i] = i;

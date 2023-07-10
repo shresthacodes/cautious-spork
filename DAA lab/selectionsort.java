@@ -49,27 +49,29 @@ class ssort {
     }
 }
 
-public class Selectionsort {
-public static void main(String[] args) {
-		
-		ssort sort_obj=new ssort();
-		int n;
-		long start,end,time;
-		
-		//Create an array with random numbers or sorted numbers
-		Scanner sobj=new Scanner(System.in);
-		System.out.println("Enter the no. of elements to be created :");
-		n=sobj.nextInt();
-		sort_obj.create_array(n,2);
-		System.out.println("Array elements to be sorted are :");
-		sort_obj.print_array();
-		
-		// Run selection sort algorithm.
-		// Measure system time before sorting starts and after sorting ends.		
-		start=System.nanoTime(); // System.currentTimeMillis() gives milliseconds
-		sort_obj.sort();
-		end=System.nanoTime();
-		System.out.println("\nThe sorted elements are :");
-		sort_obj.print_array();
-		time = (end-start)/1000000L;
-		System.out.println("\nThe time taken to sort " + n + " elements is "+time+"ms");
+public class selectionsort {
+    public static void main(String[] args) {
+
+        ssort sort_obj = new ssort();
+        int n;
+        long start, end, time;
+
+        // Create an array with random numbers or sorted numbers
+        Scanner sobj = new Scanner(System.in);
+        System.out.println("Enter the no. of elements to be created :");
+        n = sobj.nextInt();
+        sort_obj.create_array(n, 2);
+        System.out.println("Array elements to be sorted are :");
+        sort_obj.print_array();
+
+        // Run selection sort algorithm.
+        // Measure system time before sorting starts and after sorting ends.
+        start = System.nanoTime(); // System.currentTimeMillis() gives milliseconds
+        sort_obj.sort();
+        end = System.nanoTime();
+        System.out.println("\nThe sorted elements are :");
+        sort_obj.print_array();
+        time = (end - start) / 1000000L;
+        System.out.println("\nThe time taken to sort " + n + " elements is " + time + "ms");
+    }
+}

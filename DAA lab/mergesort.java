@@ -1,11 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class MergeSort {
+public class mergesort {
     private static int[] arr;
     private static int[] temp;
 
-    public MergeSort(int n) {
+    public mergesort(int n) {
         arr = new int[n];
         temp = new int[n];
     }
@@ -55,7 +55,7 @@ public class MergeSort {
         int choice = sc.nextInt();
         System.out.println("Enter length: ");
         int n = sc.nextInt();
-        MergeSort ob = new MergeSort(n);
+        mergesort ob = new mergesort(n);
 
         if (choice == 1) {
             for (int i = 0; i < n; i++)
