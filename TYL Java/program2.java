@@ -5,9 +5,10 @@ public class program2 {
     public static void main(String[] args) {
 
         int r, n, num, mul = 1, sum = 0;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number=");
-        n = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter number=");
+            n = sc.nextInt();
+        }
         num = n;
         while (num > 0) {
             r = num % 10;

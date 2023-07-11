@@ -55,7 +55,7 @@ public class mergesort {
         int choice = sc.nextInt();
         System.out.println("Enter length: ");
         int n = sc.nextInt();
-        mergesort ob = new mergesort(n);
+        mergesort obj = new mergesort(n);
 
         if (choice == 1) {
             for (int i = 0; i < n; i++)
