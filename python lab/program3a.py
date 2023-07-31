@@ -1,5 +1,4 @@
 # WAP that accepts the sentence and find the number of words, digits,uppercase letters & lowercase letters.
-from curses.ascii import isdigit, islower, isupper
 
 
 sen = input(">")
