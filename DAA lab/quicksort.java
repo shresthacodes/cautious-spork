@@ -65,7 +65,9 @@ public class quicksort {
         double time = end - st;
         time = time / (Math.pow(10, 6));
         System.out.println("\nTime taken : " + time);
-
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i]);
+        }
         sc.close();
     }
 }
