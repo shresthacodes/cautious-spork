@@ -2,21 +2,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class mergesort {
-    private static int[] arr;
-    private static int[] temp;
+    private int[] arr;
+    private int[] temp;
 
     public mergesort(int n) {
         arr = new int[n];
         temp = new int[n];
     }
 
-    public static void swap(int a, int b) {
+    public void swap(int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
     }
 
-    public static void simpleMerge(int low, int mid, int high) {
+    public void simpleMerge(int low, int mid, int high) {
         int i = low, j = mid + 1, k = low;
 
         while (i <= mid && j <= high) {
@@ -40,7 +40,7 @@ public class mergesort {
         }
     }
 
-    public static void msort(int low, int high) {
+    public void msort(int low, int high) {
         if (low < high) {
             int mid = (low + high) / 2;
             msort(low, mid);
@@ -59,20 +59,20 @@ public class mergesort {
 
         if (choice == 1) {
             for (int i = 0; i < n; i++)
-                arr[i] = i;
+                obj.arr[i] = i;
         } else if (choice == 2) {
             for (int i = 0; i < n; i++)
-                arr[i] = n - i;
+                obj.arr[i] = n - i;
         } else {
             Random r = new Random();
             for (int i = 0; i < n; i++) {
-                arr[i] = r.nextInt(1000000);
+                obj.arr[i] = r.nextInt(1000000);
             }
         }
 
         // Merge Sort
         double st = System.nanoTime();
-        msort(0, n - 1);
+        obj.msort(0, n - 1);
         double end = System.nanoTime();
 
         double time = end - st;
@@ -80,7 +80,7 @@ public class mergesort {
         System.out.println("\nTime taken: " + time);
 
         for (int i = 0; i < n; i++) {
-            System.out.println(arr[i]);
+            System.out.println(obj.arr[i]);
         }
         sc.close();
     }
