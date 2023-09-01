@@ -1,10 +1,10 @@
 # Program to find the sum of fibonacci series
 
-def fibo(n):
+# Fibonacci series using recursion
+def fibonacci(n):
     if n <= 1:
         return n
-    else:
-        return fibo(n-1) + fibo(n-2)
+    return fibonacci(n-1) + fibonacci(n-2)
 
 
 n = int(input("Enter value of n: "))
@@ -13,7 +13,7 @@ if n < 1:
 
 else:
     for i in range(0, n):
-        print(fibo(i))
+        print(fibonacci(i))
 
 # Convert binary to decimal, octal to hexadecimal
 n = str(input("Enter value of binary : "))
@@ -22,5 +22,4 @@ print("Decimal Value is : ", dec)
 
 n = str(input("Enter value of Octal : "))
 hexa = hex(int(n, 8))
-print("Hexadecimal Value is : ", hexa)
-
+print("Hexadecimal Value is : ", hexa.replace("0x", ""))

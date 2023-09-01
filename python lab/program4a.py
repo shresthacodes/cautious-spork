@@ -22,12 +22,14 @@ def insertionsort(ls):
 # Mergesort
 
 def mergesort(ls):
+    print(ls)
+    print(" ")
+    # dividing left and right part of the list
     if len(ls) > 1:
         mid = len(ls)//2
-        llist = ls[mid:]
-        rlist = ls[:mid]
-
+        llist = ls[:mid]
         mergesort(llist)
+        rlist = ls[mid:]
 
         mergesort(rlist)
         i = j = k = 0
@@ -50,7 +52,7 @@ def mergesort(ls):
             ls[k] = rlist[j]
             j += 1
             k += 1
-    print("Sorted list: ", ls)
+    print("Sorted list:\n", ls)
 
 
 a = int(input("Enter the choice 1: insertion sort and 2: mergesort: "))
