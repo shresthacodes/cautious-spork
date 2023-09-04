@@ -10,7 +10,6 @@ for i in range(1, 10):
         with open(os.path. join ('comics',image.split('/')[-1]),'wb') as f:
             f.write(requests.get ('https:// '+ image [2: ]).content)
 
-
     except Exception:
              continue
 
