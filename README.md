@@ -1,4 +1,4 @@
 
-# Vtu Lab programs for 4th sem (CSE)
+# Vtu Lab programs 2021 - 2025
 <h3>This repo gets updated every week!</h3>
-<h3> Give it a star if you guys liked it :)</h3>
+
