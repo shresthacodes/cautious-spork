@@ -12,14 +12,23 @@ if n < 1:
     print("Number should be greater than 0")
 
 else:
-    for i in range(0, n):
-        print(fibonacci(i))
+    print(fibonacci(n))
 
 # Convert binary to decimal, octal to hexadecimal
 n = str(input("Enter value of binary : "))
-dec = int(n, 2)
-print("Decimal Value is : ", dec)
+def btd(n):
+    dec = int(n, 2)
+    print("Decimal Value is : ", dec)
 
-n = str(input("Enter value of Octal : "))
-hexa = hex(int(n, 8))
-print("Hexadecimal Value is : ", hexa.replace("0x", ""))
+num = str(input("Enter value of Octal : "))
+def oth(n):
+    hexa = hex(int(n, 8))
+    print("Hexadecimal Value is : ", hexa.replace("0x", ""))
+if all(char in '01' for char in n):
+    btd(n)
+else:
+    print("input not valid")
+if all(char in '01234567' for char in n):
+    oth(n)
+else:
+    print("input not valid")

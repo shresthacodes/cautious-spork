@@ -16,10 +16,14 @@ def isPhRegex(numstr):
     ph_pat = re.compile(r"\d{3}-\d{3}-\d{4}$")
 
     if ph_pat.match(numstr):
-        return True
+        return "It is a phone number"
     return False
 
 numstr = input("Enter a phone no. : ")
+ch=int(input("enter the choice 1 or 2: "))
+if ch==1:
 
-print(isPhoneNumber(numstr))
-print(isPhRegex(numstr))
+    print(isPhoneNumber(numstr))
+if ch==2:
+
+    print(isPhRegex(numstr))

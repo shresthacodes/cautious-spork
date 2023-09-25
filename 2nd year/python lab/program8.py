@@ -49,3 +49,6 @@ if num_obj.data_palindrome():
     print("Number entered is a palindrome")
 else:
     print("Number entered is not a palindrome")
+
+
+

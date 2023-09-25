@@ -1,6 +1,4 @@
 # WAP that accepts the sentence and find the number of words, digits,uppercase letters & lowercase letters.
-
-
 sen = input(">")
 print("Given sentence:", sen)
 words = sen.split()

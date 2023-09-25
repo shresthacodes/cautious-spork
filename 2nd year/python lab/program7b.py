@@ -32,7 +32,7 @@ for i in range(n):
     emp[i].output()
 
 dep = input("Enter department : ")
-hike = int(input("Enter percent : "))
+hike = int(input("Enter salary hike percent : "))
 
 for i in range(n):
     if dep == emp[i].dept:

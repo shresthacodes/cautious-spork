@@ -10,12 +10,14 @@ print("Unsorted array:", ls)
 def insertionsort(ls):
     for i in range(1, len(ls)):
         key = ls[i]
-        j = i-1
+        j = i - 1
 
         while j >= 0 and key < ls[j]:
-            ls[j+1] = ls[j]
+            ls[j + 1] = ls[j]
             j -= 1
-        ls[j+1] = key
+
+        ls[j + 1] = key
+
     print("Sorted list ", ls)
 
 
@@ -37,11 +39,11 @@ def mergesort(ls):
             if llist[i] < rlist[j]:
                 ls[k] = llist[i]
                 i += 1
-                k += 1
+
             else:
                 ls[k] = rlist[j]
                 j += 1
-                k += 1
+            k += 1
 
         while i < len(llist):
             ls[k] = llist[i]
