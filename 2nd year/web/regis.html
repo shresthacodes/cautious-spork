@@ -1,75 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Calculator</title>
+    <title>Registration Page</title>
     <style>
         body {
-            margin: 150px;
+            font-family: Arial, sans-serif;
         }
 
-        input {
+        .form-container {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"] {
             width: 100%;
-            height: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
-    <script>
-        function display(x) {
-            document.getElementById("text1").value += x;
-        }
-        function compute() {
-            let x = document.getElementById("text1").value;
-            document.getElementById("text1").value = eval(x);
-        }
-    </script>
 </head>
 
 <body>
+    <div class="form-container">
+        <h2>Registration Page</h2>
+        <form id="registrationForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
 
-    <form>
-        <center>
-            <table cellpadding="5" border="2" align="center" style="background-color: lightgreen;" width="40%"
-                height="70%">
-                <tr>
-                    <th colspan="4" bgcolor="white">
-                        <h1>Calculator</h1>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="4"><input type="textbox" id="text1" placeholder="0" style="text-align: right;"></td>
-                </tr>
-                <tr>
-                    <td><input type="reset" value="C" /></td>
-                    <td><input type="button" value="/" onclick="display(this.value)" /></td>
-                    <td><input type="button" value="*" onclick="display(this.value)" /></td>
-                    <td><input type="button" value="-" onclick="display(this.value)"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="7" onclick="display(this.value)"></td>
-                    <td><input type="button" value="8" onclick="display(this.value)"></td>
-                    <td><input type="button" value="9" onclick="display(this.value)"></td>
-                    <td rowspan="2"><input type="button" value="+" onclick="display(this.value)" style="height:50px;">
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="4" onclick="display(this.value)"></td>
-                    <td><input type="button" value="5" onclick="display(this.value)"></td>
-                    <td><input type="button" value="6" onclick="display(this.value)"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="1" onclick="display(this.value)"></td>
-                    <td><input type="button" value="2" onclick="display(this.value)"></td>
-                    <td><input type="button" value="3" onclick="display(this.value)"></td>
-                    <td rowspan="2"><input type="button" value="=" onclick="compute()" style="height:48px;"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" value="0" onclick="display(this.value)" style="width:100%" />
-                    </td>
-                    <td><input type="button" value="." onclick="display(this.value)"></td>
-                </tr>
-            </table>
-        </center>
-    </form>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required><br>
+
+            <label for="Gender">Gender:</label>
+            <input type='radio' name="gender">male <input type='radio' name="gender">female<br /><br />
+            <input type='Submit' value='submit' />
+            <input type='Reset' value='reset' />
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (event) {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const mobile = document.getElementById('mobile').value;
+
+            // Regular expressions for validation
+            const nameRegex = /^[a-zA-Z]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const mobileRegex = /^\d{10}$/;
+
+            let isValid = true;
+
+            // First Name validation
+            if (!nameRegex.test(firstName) || firstName.length < 6) {
+                alert('First Name should contain alphabets and be at least 6 characters long.');
+                isValid = false;
+            }
+
+            // Last Name validation
+            if (!nameRegex.test(lastName) || lastName.length === 0) {
+                alert('Last Name should not be empty and contain alphabets.');
+                isValid = false;
+            }
+
+            // Address validation
+            if (address.length === 0) {
+                alert('Address should not be empty.');
+                isValid = false;
+            }
+
+            // Email validation
+            if (!emailRegex.test(email)) {
+                alert('Invalid Email format.');
+                isValid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert('Password should be at least 6 characters long.');
+                isValid = false;
+            }
+
+            // Mobile Number validation
+            if (!mobileRegex.test(mobile)) {
+                alert('Mobile Number should contain 10 digits only.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script>
 </body>
 
 </html>
